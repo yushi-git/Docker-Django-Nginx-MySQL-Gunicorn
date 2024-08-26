@@ -23,7 +23,7 @@ services:
     container_name: app
     build:
       context: .
-      dockerfile: containers/django/Dockerfile
+      dockerfile: containers/Django/Dockerfile
     volumes:
       - .:/code
       - ./static:/static
