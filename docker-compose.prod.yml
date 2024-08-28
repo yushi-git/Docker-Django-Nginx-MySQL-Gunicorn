@@ -27,6 +27,7 @@ services:
     volumes:
       - .:/code
       - ./static:/static
+      - /etc/letsencrypt/:/etc/letsencrypt/:ro
     # 8000番ポートをNginx側が接続できるよう開く
     expose:
       - "8000"
@@ -50,9 +51,9 @@ services:
     # ローカルの/staticをコンテナの/staticにマウントする
     volumes:
       - ./static:/static
-    # ローカルの80番ボートをコンテナの80番ポートとつなぐ
     ports:
       - "80:80"
+      - "443:443"
     # 先にappを起動してからwebを起動する
     depends_on:
       - app
