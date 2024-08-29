@@ -49,6 +49,7 @@ services:
     # ボリュームを指定
     # ローカルの/staticをコンテナの/staticにマウントする
     volumes:
+      - ./:./
       - ./static:/static
     ports:
       - "80:80"
