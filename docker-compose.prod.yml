@@ -27,7 +27,6 @@ services:
     volumes:
       - .:/code
       - ./static:/static
-      - /etc/letsencrypt/:/etc/letsencrypt/:ro
     # 8000番ポートをNginx側が接続できるよう開く
     expose:
       - "8000"
@@ -50,6 +49,7 @@ services:
     # ボリュームを指定
     # ローカルの/staticをコンテナの/staticにマウントする
     volumes:
+      - .:/ssl
       - ./static:/static
     ports:
       - "80:80"
